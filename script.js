@@ -1,5 +1,5 @@
-var today = moment();
-$("#1a").text(today.format("MMM Do, YYYY);
+var today = moment().format("MMM Do, YYYY");
+$("#1a").text(today);
 
 var time = moment().format("hh:mm:ss");
 $("#2a").text(time);
