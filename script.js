@@ -4,7 +4,6 @@ $("#1a").text(today);
 var time = moment().format("hh:mm:ss");
 $("#2a").text(time);
 
-
 $(document).ready(function () {
   
   $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a")); 
@@ -32,11 +31,9 @@ $(document).ready(function () {
       
       var currentHour = moment().hour();
 
-    
       $(".time-block").each(function () {
           var blockHour = parseInt($(this).attr("id").split("hour")[1]);
           console.log( blockHour, currentHour)
-
           
           if (blockHour < currentHour) {
               $(this).addClass("past");
