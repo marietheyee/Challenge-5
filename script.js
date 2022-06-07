@@ -1,13 +1,15 @@
-$(document).ready(function () {
-  $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a")); 
+var today = moment();
+$("#1a).text(today.format("MMM Do, YYYY);
 
+$(document).ready(function () {
+  
+  $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a")); 
   $(".saveBtn").on("click", function () {
      
       console.log(this);
-      var text = $(this).siblings(".description").val();
+      var text = $(this).siblings(".description").val(); 
       var time = $(this).parent().attr("id");
 
-     
       localStorage.setItem(time, text);
   })
 
@@ -23,12 +25,15 @@ $(document).ready(function () {
   $("#hour17 .description").val(localStorage.getItem("hour17"));
 
   function hourTracker() {
+      
       var currentHour = moment().hour();
 
+    
       $(".time-block").each(function () {
           var blockHour = parseInt($(this).attr("id").split("hour")[1]);
           console.log( blockHour, currentHour)
 
+          
           if (blockHour < currentHour) {
               $(this).addClass("past");
               $(this).removeClass("future");
@@ -46,5 +51,5 @@ $(document).ready(function () {
           }
       })
   }
-  hourTracker(); //re-run function
+  hourTracker(); 
 })
