@@ -1,6 +1,10 @@
 var today = moment();
 $("#1a).text(today.format("MMM Do, YYYY);
 
+var time = moment().format("hh:mm:ss");
+$(#2a).text(time);
+
+
 $(document).ready(function () {
   
   $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a")); 
